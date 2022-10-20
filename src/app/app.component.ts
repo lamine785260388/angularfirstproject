@@ -1,21 +1,24 @@
+import { Pokemon } from './pokemon';
 import { Component,OnInit } from '@angular/core';
+import { POKEMONS } from './mock-pokemon-list';
+
 
 @Component({
   selector: 'app-root',
-  template: '<h1>hello word {{ pokemonlist[0]}}!</h1>'
-   
-
-  
+  templateUrl: `./app.component.html`
 })
 export class AppComponent implements OnInit{
-  pokemonlist= ['bulbizarre','salameche','carapuce'];
+  pokemonlist:Pokemon[]= POKEMONS;//signifie pokemonliste de type tableau de pokemon
   ngOnInit(): void {
     console.table(this.pokemonlist);
-    throw new Error('Method not implemented.');
+
+
   }//nous permet d'exporter notre component pour le rendre disponible
 
-selectPokemon(pokemonName:string){
-  console.log("vous avez cliqué sur le pokémon "+pokemonName);
+selectPokemon(event:MouseEvent){
+  const index : number=+(event.target as HTMLInputElement).value;
+  console.log(`vous avez cliqué sur le pokémon ${this.pokemonlist[index].name} `);
+
 };
 
 }
