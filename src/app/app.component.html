@@ -1,6 +1,6 @@
 <h1>Bonjour voici la liste des pokemons</h1>
-<input type="text" (click)="selectPokemon($event)">
-
+<input  #input (keyup)="selectPokemon(input.value)"  type="text">
+<p >{{pokemonSelected?.name}}</p>
 <p>{{pokemonlist[1].name}}</p>
 <p>{{pokemonlist[2].name}}</p>
 <p>{{pokemonlist[3].name}}</p>

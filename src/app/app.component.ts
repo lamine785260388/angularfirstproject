@@ -9,15 +9,25 @@ import { POKEMONS } from './mock-pokemon-list';
 })
 export class AppComponent implements OnInit{
   pokemonlist:Pokemon[]= POKEMONS;//signifie pokemonliste de type tableau de pokemon
+ pokemonSelected:Pokemon|undefined;
   ngOnInit(): void {
     console.table(this.pokemonlist);
 
 
+
   }//nous permet d'exporter notre component pour le rendre disponible
 
-selectPokemon(event:MouseEvent){
-  const index : number=+(event.target as HTMLInputElement).value;
-  console.log(`vous avez cliqué sur le pokémon ${this.pokemonlist[index].name} `);
+selectPokemon(Pokemonid:string){
+const pokemon:Pokemon|undefined=this.pokemonlist.find(pokemon=>pokemon.id==+Pokemonid);
+  if(pokemon){
+    console.log(`vous avez cliqué sur le pokémon ${pokemon.name} `);
+    this.pokemonSelected=pokemon;
+  }
+  else{
+    console.log("vous avez demandé un pokemon qui n'existe pas ");
+    this.pokemonSelected=pokemon;
+  }
+
 
 };
 
