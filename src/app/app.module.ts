@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgIfComponent } from './ng-if/ng-if.component';
 import { NgForComponent } from './ng-for/ng-for.component';
+import { BorderCardDirective } from './border-card.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     NgIfComponent,
-    NgForComponent
+    NgForComponent,
+    BorderCardDirective
   ],
   imports: [
     BrowserModule,
