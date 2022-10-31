@@ -11,7 +11,8 @@ export class AppComponent implements OnInit{
   pokemonlist:Pokemon[]= POKEMONS;//signifie pokemonliste de type tableau de pokemon
  pokemonSelected:Pokemon|undefined;
   ngOnInit(): void {
-    console.table(this.pokemonlist);
+    
+     console.table(this.pokemonlist);
 
 
 
