@@ -1,4 +1,4 @@
-<h1 class="center">Bonjour voici la liste des pokemons</h1>
+<h1 class="center">Bonjour voici la liste des pokemons </h1>
 <div class="container" >
     <div class="row" >
         
@@ -9,8 +9,9 @@
                 </div>
                 <div class="card-stacked">
                     <div class="card-content">
-                        <p >{{pokemon.name}}</p>
-                        <p ><small >{{pokemon.created}}</small></p>
+                        <p >{{pokemon.name }}</p>
+                        <p ><small >{{pokemon.created | date:"dd/MM/YYYY" }}</small></p>
+                        <span *ngFor="let type of pokemon.types" class="{{type | pokemonTypeColor }}">{{type}}</span>
                     </div>
                   </div>
             </div>

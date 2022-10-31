@@ -15,8 +15,6 @@ export class BorderCardDirective {
 @Input('pkmBorderCard') borderColor:string;
 @HostListener('mouseenter') onMouseEnter(){//permet de détecter un événement ici c'est mouseenter l'événement quand la souris est a l'intérieur
   this.setBorder( this.borderColor || this.defaultColor); 
-
-
 }
 @HostListener('mouseleave') onMouseLeave(){//permet de detecter quand la spuris est a l'extérieur
   this.setBorder(this.initialColor);
