@@ -1,5 +1,6 @@
+import { Router } from '@angular/router';
 import { Pokemon } from './pokemon';
-import { Component,OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { POKEMONS } from './mock-pokemon-list';
 
 
@@ -7,30 +8,11 @@ import { POKEMONS } from './mock-pokemon-list';
   selector: 'app-root',
   templateUrl: `./app.component.html`
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
   pokemonlist:Pokemon[]= POKEMONS;//signifie pokemonliste de type tableau de pokemon
- pokemonSelected:Pokemon|undefined;
-  ngOnInit(): void {
-    
-     console.table(this.pokemonlist);
+constructor(private router:Router){
 
-
-
-  }//nous permet d'exporter notre component pour le rendre disponible
-
-selectPokemon(Pokemonid:string){
-const pokemon:Pokemon|undefined=this.pokemonlist.find(pokemon=>pokemon.id==+Pokemonid);
-  if(pokemon){
-    console.log(`vous avez cliqué sur le pokémon ${pokemon.name} `);
-    this.pokemonSelected=pokemon;
-  }
-  else{
-    console.log("vous avez demandé un pokemon qui n'existe pas ");
-    this.pokemonSelected=pokemon;
-  }
-
-
-};
+}
 
 }
 
