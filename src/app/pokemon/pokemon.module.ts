@@ -1,3 +1,4 @@
+import { PokemonService } from './pokemon.service';
 import { Routes } from '@angular/router';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 
@@ -26,6 +27,7 @@ const pokemonsRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(pokemonsRoutes)
-  ]
+  ],
+  providers:[PokemonService],//on ajoute cette ligne
 })
 export class PokemonModule { }
